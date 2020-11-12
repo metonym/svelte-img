@@ -1,7 +1,7 @@
 <script>
   export let src = undefined;
   export let alt = "";
-  export let ratio = "16x9";
+  export let size = "150x90";
   export let backgroundColor = "#f4f4f4";
 
   import { createEventDispatcher, onMount } from "svelte";
@@ -44,7 +44,7 @@
     };
   }
 
-  $: [width, height] = ratio.split("x");
+  $: [width, height] = size.split("x");
   $: if (img && src !== undefined) {
     load();
   }
@@ -57,10 +57,6 @@
     height: 0;
   }
 
-  img {
-    width: 100%;
-  }
-
   img.loading {
     opacity: 0;
   }
@@ -71,8 +67,7 @@
   }
 </style>
 
-<div
-  style="padding-bottom: {(height / width) * 100}%; background-color: {backgroundColor};">
+<div style="background-color: {backgroundColor};">
   {#if loading}
     <slot name="loading" />
   {/if}
@@ -82,6 +77,7 @@
   <img
     {...$$restProps}
     bind:this={img}
+    style={`width: ${width}px; height: ${height}px;`}
     class:loading={loading && mounted}
     on:click
     on:mouseover
