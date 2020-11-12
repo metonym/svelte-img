@@ -69,6 +69,9 @@
     opacity: 1;
     transition: opacity 250ms ease-out;
   }
+  .hide {
+    display: none;
+  }
 </style>
 
 <div
@@ -83,6 +86,7 @@
     {...$$restProps}
     bind:this={img}
     class:loading={loading && mounted}
+    class:hide={error}
     on:click
     on:mouseover
     on:mouseenter
