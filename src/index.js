@@ -1,1 +1,1 @@
-import { default } from "./Img.svelte";
+export { default } from "./Img.svelte";
