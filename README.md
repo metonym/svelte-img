@@ -11,13 +11,15 @@ Even with JavaScript disabled, an image can still be loaded without resorting to
 
 ## Install
 
-```bash
+```sh
 yarn add -D svelte-img
+# OR
+npm i -D svelte-img
 ```
 
 ## Usage
 
-```html
+```svelte
 <script>
   import Img from "svelte-img";
 </script>
@@ -33,7 +35,7 @@ Specify the aspect ratio (`"{width}x{height}"`) of the image using the `ratio` p
 
 For example, an image ratio that has a width of 800px and height of 437px would be `800x437`.
 
-```html
+```svelte
 <Img src="https://place-hold.it/400x300" ratio="4x3" />
 ```
 
@@ -41,7 +43,7 @@ For example, an image ratio that has a width of 800px and height of 437px would 
 
 Loading and error states can be displayed using named slots.
 
-```html
+```svelte
 <Img src="https://place-hold.it/400x300">
   <div slot="loading">Loading...</div>
   <div slot="error">An error occurred.</div>

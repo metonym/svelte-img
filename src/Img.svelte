@@ -1,4 +1,13 @@
 <script>
+  /**
+   * @event {{ timing: number; }} load
+   * @event {{ timing: number; }} error
+   */
+
+  /**
+   * Specify the image source
+   * @type {string}
+   */
   export let src = undefined;
   export let alt = "";
   export let ratio = "16x9";
@@ -8,7 +17,7 @@
 
   const dispatch = createEventDispatcher();
 
-  let img = undefined;
+  let img = null;
   let mounted = false;
   let start = -1;
   let timing = 0;
@@ -45,9 +54,7 @@
   }
 
   $: [width, height] = ratio.split("x");
-  $: if (img && src !== undefined) {
-    load();
-  }
+  $: if (img && src !== undefined) load();
 </script>
 
 <style>
