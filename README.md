@@ -3,7 +3,7 @@
 [![NPM][npm]][npm-url]
 [![Build][build]][build-badge]
 
-> Responsive image loading component.
+> Responsive image loading component for Svelte.
 
 This component fades in an image when loaded.
 
