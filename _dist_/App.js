@@ -50,7 +50,7 @@ function create_fragment(ctx) {
 			t0 = space();
 			div0 = element("div");
 
-			div0.innerHTML = `<a href="https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg" target="_blank" rel="noopener noreferrer">Nighthawks, 1942 painting by Edward Hopper</a> 
+			div0.innerHTML = `<a href="https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg" target="_blank" rel="noopener">Nighthawks, 1942 painting by Edward Hopper</a> 
     <span class="svelte-1hh5fpw">(6,000 × 3,274 pixels, file size: 8.13 MB)</span>`;
 
 			t4 = space();
