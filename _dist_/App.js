@@ -51,14 +51,15 @@ function create_fragment(ctx) {
 			div0 = element("div");
 
 			div0.innerHTML = `<a href="https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg" target="_blank" rel="noopener">Nighthawks, 1942 painting by Edward Hopper</a> 
-    <span class="svelte-1hh5fpw">(6,000 × 3,274 pixels, file size: 8.13 MB)</span>`;
+    <span class="svelte-1bg3i1y">(6,000 × 3,274 pixels, file size: 8.13 MB)</span>`;
 
 			t4 = space();
 			div1 = element("div");
 			t5 = text_1(/*text*/ ctx[1]);
-			attr(div0, "class", "svelte-1hh5fpw");
-			attr(div1, "class", "svelte-1hh5fpw");
+			attr(div0, "class", "svelte-1bg3i1y");
+			attr(div1, "class", "svelte-1bg3i1y");
 			toggle_class(div1, "success", /*success*/ ctx[2]);
+			attr(main, "class", "svelte-1bg3i1y");
 		},
 		m(target, anchor) {
 			insert(target, main, anchor);
