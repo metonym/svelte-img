@@ -11,7 +11,7 @@ Even with JavaScript disabled, an image can still be loaded without resorting to
 
 ## Install
 
-```sh
+```bash
 yarn add -D svelte-img
 # OR
 npm i -D svelte-img
@@ -24,26 +24,43 @@ npm i -D svelte-img
   import Img from "svelte-img";
 </script>
 
-<Img src="https://place-hold.it/800x600" />
+<Img
+    backgroundColor="#e0e0e0"
+    ratio="800x437"
+    src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg"
+    alt="Nighthawks, 1942 painting by Edward Hopper">
+  <div slot="loading">Loading...</div>
+  <div slot="error">An error occurred.</div>
+</Img>
+
+<div>
+  <a
+    href="https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg"
+    target="_blank"
+    rel="noopener">
+    Nighthawks, 1942 painting by Edward Hopper
+  </a>
+  <span>(6,000 × 3,274 pixels, file size: 8.13 MB)</span>
+</div>
 ```
 
 ### Responsive placeholder
 
 The component maintains a fluid aspect ratio to avoid [layout jank](https://css-tricks.com/the-fight-against-layout-jank/).
 
-Specify the aspect ratio (`"{width}x{height}"`) of the image using the `ratio` prop.
+Specify the aspect ratio (width x height) of the image using the `ratio` prop.
 
 For example, an image ratio that has a width of 800px and height of 437px would be `800x437`.
 
 ```svelte
-<Img src="https://place-hold.it/400x300" ratio="4x3" />
+<Img src="https://place-hold.it/160x90" ratio="16x9" />
 ```
 
 ### Slots
 
 Loading and error states can be displayed using named slots.
 
-```svelte
+```jsx
 <Img src="https://place-hold.it/400x300">
   <div slot="loading">Loading...</div>
   <div slot="error">An error occurred.</div>
@@ -61,8 +78,8 @@ Loading and error states can be displayed using named slots.
 
 ## Dispatched events
 
-- on:load (fired when the image is loaded)
-- on:error (fired if a loading error occurs)
+- **on:load**: fired when the image is loaded
+- **on:error**: fired if an error occurs
 
 ## Forwarded events
 

@@ -1,6 +1,6 @@
 .DS_Store
-/build
 /lib
 /node_modules
+/public/bundle.js
 yarn-debug.log*
 yarn-error.log*
