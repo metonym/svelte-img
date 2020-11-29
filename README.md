@@ -22,13 +22,26 @@ npm i -D svelte-img
 ```svelte
 <script>
   import Img from "svelte-img";
+  import { tick } from "svelte";
+
+  let url =
+    "https://upload.wikimedia.org/wikipedia/commons/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg";
+  let src = url;
+
+  function reload() {
+    src = undefined;
+    tick().then(() => {
+      src = url;
+    });
+  }
 </script>
 
 <Img
-    backgroundColor="#e0e0e0"
-    ratio="800x437"
-    src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg"
-    alt="Nighthawks, 1942 painting by Edward Hopper">
+  {src}
+  backgroundColor="#e0e0e0"
+  ratio="800x437"
+  alt="Nighthawks, 1942 painting by Edward Hopper"
+>
   <div slot="loading">Loading...</div>
   <div slot="error">An error occurred.</div>
 </Img>
@@ -37,11 +50,16 @@ npm i -D svelte-img
   <a
     href="https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg"
     target="_blank"
-    rel="noopener">
+    rel="noopener"
+  >
     Nighthawks, 1942 painting by Edward Hopper
   </a>
-  <span>(6,000 × 3,274 pixels, file size: 8.13 MB)</span>
+  <span>(file size: 8.13 MB)</span>
 </div>
+
+<button type="button" on:click={reload}>Reload</button>
+
+<button type="button" on:click={() => (src = url + '1')}>Simulate error</button>
 ```
 
 ### Responsive placeholder
@@ -60,7 +78,7 @@ For example, an image ratio that has a width of 800px and height of 437px would 
 
 Loading and error states can be displayed using named slots.
 
-```jsx
+```html
 <Img src="https://place-hold.it/400x300">
   <div slot="loading">Loading...</div>
   <div slot="error">An error occurred.</div>
@@ -96,7 +114,7 @@ The following events are forwarded to the `img` element.
 
 [MIT](LICENSE)
 
-[npm]: https://img.shields.io/npm/v/svelte-img.svg?color=blue
+[npm]: https://img.shields.io/npm/v/svelte-img.svg?color=blue&style=for-the-badge
 [npm-url]: https://npmjs.com/package/svelte-img
-[build]: https://travis-ci.com/metonym/svelte-img.svg?branch=master
+[build]: https://img.shields.io/travis/com/metonym/svelte-img?style=for-the-badge
 [build-badge]: https://travis-ci.com/metonym/svelte-img

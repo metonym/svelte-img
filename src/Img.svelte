@@ -76,13 +76,13 @@
     opacity: 1;
     transition: opacity 250ms ease-out;
   }
+
   .hide {
     display: none;
   }
 </style>
 
-<div
-  style="padding-bottom: {(height / width) * 100}%; background-color: {backgroundColor};">
+<div style="padding-bottom: {(height / width) * 100}%; background-color: {backgroundColor};">
   {#if loading}
     <slot name="loading" />
   {/if}
