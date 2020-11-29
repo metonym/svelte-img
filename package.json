@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "rollup -cw",
     "predeploy": "rollup -c",
-    "deploy": "npx gh-pages -d public",
+    "deploy": "npx gh-pages -d dist",
     "prepack": "BUNDLE=true rollup -c"
   },
   "devDependencies": {
