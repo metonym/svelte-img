@@ -1,4 +1,5 @@
 /// <reference types="svelte" />
+import { SvelteComponentTyped } from "svelte";
 
 export interface ImgProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["img"]> {
   /**
@@ -22,18 +23,15 @@ export interface ImgProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMa
   backgroundColor?: string;
 }
 
-export default class Img {
-  $$prop_def: ImgProps;
-  $$slot_def: {
-    error: {};
-    loading: {};
-  };
-
-  $on(eventname: "load", cb: (event: CustomEvent<{ timing: number }>) => void): () => void;
-  $on(eventname: "error", cb: (event: CustomEvent<{ timing: number }>) => void): () => void;
-  $on(eventname: "click", cb: (event: WindowEventMap["click"]) => void): () => void;
-  $on(eventname: "mouseover", cb: (event: WindowEventMap["mouseover"]) => void): () => void;
-  $on(eventname: "mouseenter", cb: (event: WindowEventMap["mouseenter"]) => void): () => void;
-  $on(eventname: "mouseout", cb: (event: WindowEventMap["mouseout"]) => void): () => void;
-  $on(eventname: string, cb: (event: Event) => void): () => void;
-}
+export default class Img extends SvelteComponentTyped<
+  ImgProps,
+  {
+    load: CustomEvent<{ timing: number }>;
+    error: CustomEvent<{ timing: number }>;
+    click: WindowEventMap["click"];
+    mouseover: WindowEventMap["mouseover"];
+    mouseenter: WindowEventMap["mouseenter"];
+    mouseout: WindowEventMap["mouseout"];
+  },
+  { error: {}; loading: {} }
+> {}

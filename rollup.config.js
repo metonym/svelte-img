@@ -10,7 +10,7 @@ export default () => {
   if (!BUNDLE) {
     return svelteReadme({
       minify: !DEV,
-      prefixUrl: "https://github.com/metonym/svelte-img/tree/master/",
+      prefixUrl: `${pkg.homepage}/tree/master/`,
       style: `
         .code-fence button {
           margin-top: 24px;
@@ -49,7 +49,7 @@ export default () => {
         file: UMD ? pkg.main : pkg.module,
         name: UMD ? pkg.name : undefined,
       },
-      plugins: [svelte(), resolve()],
+      plugins: [svelte({ emitCss: false }), resolve()],
     };
   });
 };
