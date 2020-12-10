@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Controlled fade transition
 
+## [0.3.0](https://github.com/metonym/svelte-img/releases/tag/v0.3.0) - 2020-12-09
+
+- Use `SvelteComponentTyped` in TypeScript definitions
+
 ## [0.2.0](https://github.com/metonym/svelte-img/releases/tag/v0.2.0) - 2020-11-17
 
 - add "hide" class to `img` element if error occurs
