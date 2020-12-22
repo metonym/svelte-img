@@ -9,6 +9,8 @@ This component fades in an image when loaded.
 
 Even with JavaScript disabled, an image can still be loaded without resorting to the `noscript` tag.
 
+<!-- TOC -->
+
 ## Install
 
 ```bash
@@ -94,12 +96,12 @@ Loading and error states can be displayed using named slots.
 | ratio           | `string` (default: `"16x9"`     |
 | backgroundColor | `string` (default: `"#f4f4f4"`) |
 
-## Dispatched events
+### Dispatched events
 
 - **on:load**: fired when the image is loaded
 - **on:error**: fired if an error occurs
 
-## Forwarded events
+### Forwarded events
 
 The following events are forwarded to the `img` element.
 

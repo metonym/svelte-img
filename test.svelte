@@ -17,3 +17,6 @@
   <div slot="loading">Loading...</div>
   <div slot="error">An error occurred.</div>
 </Img>
+
+<button type="button" on:click={reload}>Reload</button>
+<button type="button" on:click={() => (src = url + '1')}>Simulate error</button>

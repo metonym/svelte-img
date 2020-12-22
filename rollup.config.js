@@ -10,7 +10,6 @@ export default () => {
   if (!BUNDLE) {
     return svelteReadme({
       minify: !DEV,
-      prefixUrl: `${pkg.homepage}/tree/master/`,
       style: `
         .code-fence button {
           margin-top: 24px;
