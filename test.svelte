@@ -13,7 +13,17 @@
   }
 </script>
 
-<Img {src} backgroundColor="#e0e0e0" ratio="800x437" alt="Nighthawks, 1942 painting by Edward Hopper">
+<Img
+  {src}
+  backgroundColor="#e0e0e0"
+  ratio="800x437"
+  alt="Nighthawks, 1942 painting by Edward Hopper"
+  on:load={(e) => {
+    console.log(e.detail);
+  }}
+  on:error={(e) => {
+    console.log(e.detail);
+  }}>
   <div slot="loading">Loading...</div>
   <div slot="error">An error occurred.</div>
 </Img>

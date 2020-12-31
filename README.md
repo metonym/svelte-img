@@ -21,6 +21,9 @@ npm i -D svelte-img
 
 ## Usage
 
+### Basic
+
+<!-- prettier-ignore-start -->
 ```svelte
 <script>
   import Img from "svelte-img";
@@ -29,13 +32,6 @@ npm i -D svelte-img
   let url =
     "https://upload.wikimedia.org/wikipedia/commons/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg";
   let src = url;
-
-  function reload() {
-    src = undefined;
-    tick().then(() => {
-      src = url;
-    });
-  }
 </script>
 
 <Img
@@ -59,10 +55,17 @@ npm i -D svelte-img
   <span>(file size: 8.13 MB)</span>
 </div>
 
-<button type="button" on:click={reload}>Reload</button>
+<button
+  type="button"
+  on:click={() => {
+    src = undefined;
+    tick().then(() => (src = url));
+  }}
+>Reload</button>
 
 <button type="button" on:click={() => (src = url + '1')}>Simulate error</button>
 ```
+<!-- prettier-ignore-end -->
 
 ### Responsive placeholder
 
@@ -72,9 +75,11 @@ Specify the aspect ratio (width x height) of the image using the `ratio` prop.
 
 For example, an image ratio that has a width of 800px and height of 437px would be `800x437`.
 
+<!-- prettier-ignore-start -->
 ```svelte
 <Img src="https://place-hold.it/160x90" ratio="16x9" />
 ```
+<!-- prettier-ignore-end -->
 
 ### Slots
 
@@ -89,7 +94,9 @@ Loading and error states can be displayed using named slots.
 
 ## API
 
-| Property name   | Value                           |
+### Props
+
+| Prop name       | Value                           |
 | :-------------- | :------------------------------ |
 | src             | `string` (default: `undefined`) |
 | alt             | `string` (default: `""`)        |
@@ -110,7 +117,13 @@ The following events are forwarded to the `img` element.
 - on:mouseenter
 - on:mouseout
 
-## [Changelog](CHANGELOG.md)
+## TypeScript
+
+Svelte version 3.31 or greater is required if using TypeScript.
+
+## Changelog
+
+[Changelog](CHANGELOG.md)
 
 ## License
 
