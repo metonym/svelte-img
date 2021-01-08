@@ -1,7 +1,6 @@
 # svelte-img
 
 [![NPM][npm]][npm-url]
-[![Build][build]][build-badge]
 
 > Responsive image loading component for Svelte.
 
