@@ -9,6 +9,10 @@ This component fades in an image when loaded.
 
 Even with JavaScript disabled, an image can still be loaded without resorting to the `noscript` tag.
 
+<!-- REPO_URL -->
+
+---
+
 <!-- TOC -->
 
 ## Install
@@ -131,5 +135,3 @@ Svelte version 3.31 or greater is required if using TypeScript.
 
 [npm]: https://img.shields.io/npm/v/svelte-img.svg?color=blue&style=for-the-badge
 [npm-url]: https://npmjs.com/package/svelte-img
-[build]: https://img.shields.io/travis/com/metonym/svelte-img?style=for-the-badge
-[build-badge]: https://travis-ci.com/metonym/svelte-img

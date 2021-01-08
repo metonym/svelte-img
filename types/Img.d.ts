@@ -1,7 +1,8 @@
 /// <reference types="svelte" />
 import { SvelteComponentTyped } from "svelte";
 
-export interface ImgProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["img"]> {
+export interface ImgProps
+  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["img"]> {
   /**
    * Specify the image source
    */

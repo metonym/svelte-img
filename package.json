@@ -17,9 +17,9 @@
     "svelte-check": "svelte-check"
   },
   "devDependencies": {
-    "svelte": "^3.31.0",
-    "svelte-check": "^1.1.24",
-    "svelte-readme": "^2.1.2"
+    "svelte": "^3.31.2",
+    "svelte-check": "^1.1.25",
+    "svelte-readme": "^2.2.0"
   },
   "repository": {
     "type": "git",
@@ -41,8 +41,5 @@
     "lib",
     "src",
     "types"
-  ],
-  "prettier": {
-    "printWidth": 120
-  }
+  ]
 }
