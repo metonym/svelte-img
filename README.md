@@ -4,11 +4,11 @@
 
 > Responsive image loading component for Svelte.
 
+<!-- REPO_URL -->
+
 This component fades in an image when loaded.
 
 Even with JavaScript disabled, an image can still be loaded without resorting to the `noscript` tag.
-
-<!-- REPO_URL -->
 
 ---
 
@@ -26,7 +26,6 @@ npm i -D svelte-img
 
 ### Basic
 
-<!-- prettier-ignore-start -->
 ```svelte
 <script>
   import Img from "svelte-img";
@@ -64,11 +63,15 @@ npm i -D svelte-img
     src = undefined;
     tick().then(() => (src = url));
   }}
->Reload</button>
+>
+  Reload
+</button>
 
-<button type="button" on:click={() => (src = url + '1')}>Simulate error</button>
+<button type="button" on:click={() => (src = url + "1")}>
+  Simulate error
+</button>
+
 ```
-<!-- prettier-ignore-end -->
 
 ### Responsive placeholder
 
@@ -78,11 +81,10 @@ Specify the aspect ratio (width x height) of the image using the `ratio` prop.
 
 For example, an image ratio that has a width of 800px and height of 437px would be `800x437`.
 
-<!-- prettier-ignore-start -->
 ```svelte
 <Img src="https://place-hold.it/160x90" ratio="16x9" />
+
 ```
-<!-- prettier-ignore-end -->
 
 ### Slots
 
