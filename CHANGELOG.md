@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Controlled fade transition
 
+## [0.3.1](https://github.com/metonym/svelte-img/releases/tag/v0.3.1) - 2021-08-04
+
+- Disable `a11y-mouse-events-have-key-events` warning
+
 ## [0.3.0](https://github.com/metonym/svelte-img/releases/tag/v0.3.0) - 2020-12-09
 
 - Use `SvelteComponentTyped` in TypeScript definitions
