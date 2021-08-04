@@ -57,6 +57,31 @@
   $: if (img && src !== undefined) load();
 </script>
 
+<div
+  style="padding-bottom: {(height / width) *
+    100}%; background-color: {backgroundColor};"
+>
+  {#if loading}
+    <slot name="loading" />
+  {/if}
+  {#if error}
+    <slot name="error" />
+  {/if}
+  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+  <img
+    {...$$restProps}
+    bind:this={img}
+    class:loading={loading && mounted}
+    class:hide={error}
+    on:click
+    on:mouseover
+    on:mouseenter
+    on:mouseout
+    {src}
+    {alt}
+  />
+</div>
+
 <style>
   div {
     position: relative;
@@ -81,23 +106,3 @@
     display: none;
   }
 </style>
-
-<div style="padding-bottom: {(height / width) * 100}%; background-color: {backgroundColor};">
-  {#if loading}
-    <slot name="loading" />
-  {/if}
-  {#if error}
-    <slot name="error" />
-  {/if}
-  <img
-    {...$$restProps}
-    bind:this={img}
-    class:loading={loading && mounted}
-    class:hide={error}
-    on:click
-    on:mouseover
-    on:mouseenter
-    on:mouseout
-    {src}
-    {alt} />
-</div>
