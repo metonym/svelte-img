@@ -14,11 +14,17 @@ Even with JavaScript disabled, an image can still be loaded without resorting to
 
 <!-- TOC -->
 
-## Install
+## Installation
+
+**Yarn**
 
 ```bash
 yarn add -D svelte-img
-# OR
+```
+
+**NPM**
+
+```bash
 npm i -D svelte-img
 ```
 
@@ -101,12 +107,12 @@ Loading and error states can be displayed using named slots.
 
 ### Props
 
-| Prop name       | Value                           |
-| :-------------- | :------------------------------ |
-| src             | `string` (default: `undefined`) |
-| alt             | `string` (default: `""`)        |
-| ratio           | `string` (default: `"16x9"`     |
-| backgroundColor | `string` (default: `"#f4f4f4"`) |
+| Prop name       | Type     | Default value |
+| :-------------- | :------- | :------------ |
+| src             | `string` | `undefined`   |
+| alt             | `string` | `""`          |
+| ratio           | `string` | `"16x9"`      |
+| backgroundColor | `string` | `"#f4f4f4"`   |
 
 ### Dispatched events
 
@@ -124,7 +130,9 @@ The following events are forwarded to the `img` element.
 
 ## TypeScript
 
-Svelte version 3.31 or greater is required if using TypeScript.
+Svelte version 3.31 or greater is required to use this component with TypeScript.
+
+TypeScript definitions are located in the [types folder](./types).
 
 ## Changelog
 
