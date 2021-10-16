@@ -1,5 +1,6 @@
 <script lang="ts">
   import Img from "../types";
+  import Img2 from "../types/Img.svelte";
   import { tick } from "svelte";
 
   let url =
@@ -14,6 +15,7 @@
   }
 </script>
 
+<!-- svelte-ignore missing-declaration -->
 <Img
   {src}
   backgroundColor="#e0e0e0"
@@ -32,3 +34,6 @@
 
 <button type="button" on:click={reload}>Reload</button>
 <button type="button" on:click={() => (src = url + "1")}>Simulate error</button>
+
+<!-- svelte-ignore missing-declaration -->
+<Img2 />
